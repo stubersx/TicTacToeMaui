@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToeMaui.MainPage"
+             BackgroundColor="AntiqueWhite">
+
+    <Grid>
+        <!-- Background Image -->
+        <!-- Aspect set to AspectFit maintains the height and width proportions -->
+        <!-- Rowspan is set to 2 because the stacklayout is in one row and the grid is in another -->
+        <Image Source="bg.jpg" Aspect="AspectFill" Grid.RowSpan="2" />
+
+        <!-- Main Game Elements -->
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="20">
+            <Label Text="Thanksgiving Tic Tac Toe"
+                   HorizontalTextAlignment="Center"
+                   FontFamily="RubikDirt-Regular.ttf"
+                   FontSize="60"
+                   TextColor="#488598"
+                   x:Name="Title" />
+            
+            <Grid RowDefinitions="*,*,*,*,*"
+                  ColumnDefinitions="*,*,*"
+                  Padding="10"
+                  VerticalOptions="Center"
+                  HorizontalOptions="Center"
+                  Opacity=".8"
+                  ColumnSpacing="2"
+                  RowSpacing="2"
+                  WidthRequest="400"
+                  HeightRequest="400"
+                  BackgroundColor="White"
+                  x:Name="Board">
+
+                <!-- Tic-Tac-Toe Grid -->
+                <Button Grid.Row="0" Grid.Column="0" Clicked="OnButtonClicked" x:Name="btn00" FontSize="40" Background="#EE8722" />
+                <Button Grid.Row="0" Grid.Column="1" Clicked="OnButtonClicked" x:Name="btn01" FontSize="40" Background="Sienna" />
+                <Button Grid.Row="0" Grid.Column="2" Clicked="OnButtonClicked" x:Name="btn02" FontSize="40" Background="#EE8722" />
+
+                <Button Grid.Row="1" Grid.Column="0" Clicked="OnButtonClicked" x:Name="btn10" FontSize="40" Background="Sienna" />
+                <Button Grid.Row="1" Grid.Column="1" Clicked="OnButtonClicked" x:Name="btn11" FontSize="40" Background="#EE8722" />
+                <Button Grid.Row="1" Grid.Column="2" Clicked="OnButtonClicked" x:Name="btn12" FontSize="40" Background="Sienna" />
+
+                <Button Grid.Row="2" Grid.Column="0" Clicked="OnButtonClicked" x:Name="btn20" FontSize="40" Background="#EE8722" />
+                <Button Grid.Row="2" Grid.Column="1" Clicked="OnButtonClicked" x:Name="btn21" FontSize="40" Background="Sienna" />
+                <Button Grid.Row="2" Grid.Column="2" Clicked="OnButtonClicked" x:Name="btn22" FontSize="40" Background="#EE8722" />
+
+                <!-- Game Status -->
+                <Label Grid.Row="3" Grid.ColumnSpan="3" x:Name="statusLabel" HorizontalOptions="Center" VerticalOptions="Center" FontSize="35" FontFamily="RubikDirt-Regular.ttf" />
+
+                <!-- Restart Button -->
+                <Button Grid.Row="4" Grid.ColumnSpan="3" Text="Restart" Clicked="OnRestartClicked" FontSize="35" Background="#8B080D" TextColor="White" FontFamily="RubikDirt-Regular.ttf" />
+
+            </Grid>
+        </StackLayout>
+        
+    </Grid>
+
+</ContentPage>
